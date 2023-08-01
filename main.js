@@ -2,6 +2,8 @@ const express = require("express");
 const fs = require("fs");
 const mongoose = require("mongoose");
 const app = express();
+const cors = require("cors");
+
 const productRoute = require("./routes/product");
 const htmlRoute = require("./routes/html");
 const rootRouter = require("./routes/root");
@@ -15,6 +17,7 @@ const { log } = require("./middlewares/middleware");
 const authRoutes = require("./routes/authRoutes");
 const fileUploadRoutes = require("./routes/fielUploadRoutes");
 
+app.use(cors());
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("viewa", "./views");
