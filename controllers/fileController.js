@@ -24,7 +24,7 @@ const FileUploadCloudinary = async (req, res) => {
     unique_filename: false,
     overwrite: true,
   };
-
+console.log(req.files)
   //   let uploadFileName = req.files["File\n"].path.split("\\");
   const result = await cloudinary.uploader.upload(
     req.files["File\n"].path,
