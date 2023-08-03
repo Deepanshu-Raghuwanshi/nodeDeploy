@@ -30,26 +30,30 @@ const FileUploadCloudinary = async (req, res) => {
     req.files["File\n"].path,
     options
   );
+  res.json({
+    message: "image data added to database",
+    data: result.url,
+  });
 
-  const id1 = req.body.id;
-  const imageUrl = result.url;
-  let data = {
-    id: id1,
-    image: imageUrl,
-  };
-  console.log(data);
-  if (id1) {
-    let data1 = await editData(data);
-    res.json({
-      message: "image data added to database",
-      data: data1,
-    });
-  } else {
-    res.json({
-      message: "failed",
-      error: "Enter valid id to upload image data to database",
-    });
-  }
+  // const id1 = req.body.id;
+  // const imageUrl = result.url;
+  // let data = {
+  //   id: id1,
+  //   image: imageUrl,
+  // };
+  // console.log(data);
+  // if (id1) {
+  //   let data1 = await editData(data);
+  //   res.json({
+  //     message: "image data added to database",
+  //     data: data1,
+  //   });
+  // } else {
+  //   res.json({
+  //     message: "failed",
+  //     error: "Enter valid id to upload image data to database",
+  //   });
+  // }
 };
 
 // const FileUploadCloudinary = async (req, res) => {

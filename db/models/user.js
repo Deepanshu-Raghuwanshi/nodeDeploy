@@ -10,7 +10,6 @@ const usersSchema = new Schema({
   username: {
     type: String,
     unique: true,
-    index: true,
   },
   password: String,
   date: { type: Date, default: Date.now },
