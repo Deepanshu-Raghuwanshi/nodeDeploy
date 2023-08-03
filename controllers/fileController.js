@@ -28,7 +28,7 @@ console.log(req.files)
   //   let uploadFileName = req.files["File\n"].path.split("\\");
   const result = await cloudinary.uploader.upload(
     // req.files["File\n"].path,
-    req.files.file.path
+    req.files.file.path,
     options
   );
   res.json({
